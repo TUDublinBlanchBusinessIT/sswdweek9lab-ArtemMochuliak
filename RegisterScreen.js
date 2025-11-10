@@ -8,11 +8,12 @@ export default function RegisterScreen({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const register = () =>
+  const register = () => {
+    console.log("Register button pressed"); 
     createUserWithEmailAndPassword(auth, email, password)
       .then(() => Alert.alert("Account created!"))
       .catch((e) => Alert.alert("Error", e.message));
-
+  }
   return (
     <View style={{ flex: 1, justifyContent: "center", padding: 20 }}>
       <TextInput placeholder="Email" onChangeText={setEmail} style={{ margin: 5, borderWidth: 1, padding: 8 }} />
